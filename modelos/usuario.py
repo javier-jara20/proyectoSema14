@@ -4,7 +4,8 @@ class Usuario:
         self,
         identificacion: str,
         nombre: str,
-        correo: str
+        correo: str,
+        contrasena: str
     ) -> None:
 
         if not identificacion.strip():
@@ -22,12 +23,17 @@ class Usuario:
                 "El correo no puede estar vacío."
             )
 
+        if not contrasena.strip():
+            raise ValueError(
+                "La contraseña no puede estar vacía."
+            )
+
         self.identificacion = identificacion
         self.nombre = nombre
         self.correo = correo
+        self.contrasena = contrasena
 
     def mostrar_informacion(self) -> str:
-
         return (
             f"Identificación: {self.identificacion}\n"
             f"Nombre: {self.nombre}\n"
@@ -35,9 +41,9 @@ class Usuario:
         )
 
     def to_dict(self) -> dict:
-
         return {
             "identificacion": self.identificacion,
             "nombre": self.nombre,
-            "correo": self.correo
+            "correo": self.correo,
+            "contrasena": self.contrasena
         }

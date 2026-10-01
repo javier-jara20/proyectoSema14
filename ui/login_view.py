@@ -9,21 +9,91 @@ class LoginView(tk.Frame):
         self.servicio = restaurante_servicio
         self.on_login_success = on_login_success
 
-        self.pack(padx=20, pady=20)
+        self.pack(fill="both", expand=True)
         self._crear_widgets()
 
     def _crear_widgets(self):
-        tk.Label(self, text="Inicio de Sesión", font=("Arial", 16, "bold")).pack(pady=10)
+        # Fondo y tarjeta central del formulario.
+        azul_marino = "#10243A"
+        dorado = "#C9A45C"
+        blanco = "#FFFFFF"
+        self.configure(bg=azul_marino)
 
-        tk.Label(self, text="Identificación:").pack()
-        self.txt_identificacion = tk.Entry(self)
-        self.txt_identificacion.pack(pady=5)
+        tarjeta = tk.Frame(self, bg=blanco, padx=34, pady=26)
+        tarjeta.place(relx=0.5, rely=0.5, anchor="center")
 
-        tk.Label(self, text="Clave (1234):").pack()
-        self.txt_clave = tk.Entry(self, show="*")
-        self.txt_clave.pack(pady=5)
+        tk.Frame(tarjeta, bg=dorado, height=4).pack(fill="x", pady=(0, 20))
 
-        tk.Button(self, text="Ingresar", command=self._validar).pack(pady=10)
+        # Encabezado del restaurante.
+        tk.Label(
+            tarjeta,
+            text="Mi-Restaurante Jaramillo",
+            font=("Arial", 19, "bold"),
+            fg=azul_marino,
+            bg=blanco
+        ).pack(pady=(0, 5))
+        tk.Label(
+            tarjeta,
+            text="Inicio de Sesión",
+            font=("Arial", 13),
+            fg="#657386",
+            bg=blanco
+        ).pack(pady=(0, 20))
+
+        # Campos de acceso.
+        tk.Label(
+            tarjeta,
+            text="Identificación",
+            font=("Arial", 10, "bold"),
+            fg=azul_marino,
+            bg=blanco,
+            anchor="w"
+        ).pack(fill="x", pady=(0, 5))
+        self.txt_identificacion = tk.Entry(
+            tarjeta,
+            font=("Arial", 12),
+            relief="solid",
+            bd=1,
+            highlightthickness=1,
+            highlightbackground="#D8DEE6",
+            highlightcolor=dorado
+        )
+        self.txt_identificacion.pack(fill="x", ipady=8, pady=(0, 15))
+
+        tk.Label(
+            tarjeta,
+            text="Contraseña",
+            font=("Arial", 10, "bold"),
+            fg=azul_marino,
+            bg=blanco,
+            anchor="w"
+        ).pack(fill="x", pady=(0, 5))
+        self.txt_clave = tk.Entry(
+            tarjeta,
+            show="*",
+            font=("Arial", 12),
+            relief="solid",
+            bd=1,
+            highlightthickness=1,
+            highlightbackground="#D8DEE6",
+            highlightcolor=dorado
+        )
+        self.txt_clave.pack(fill="x", ipady=8, pady=(0, 22))
+
+        # Acción principal.
+        tk.Button(
+            tarjeta,
+            text="Ingresar",
+            command=self._validar,
+            font=("Arial", 12, "bold"),
+            fg=blanco,
+            bg=azul_marino,
+            activeforeground=blanco,
+            activebackground="#1C3957",
+            relief="flat",
+            cursor="hand2",
+            height=2
+        ).pack(fill="x")
 
     def _validar(self):
         identificacion = self.txt_identificacion.get().strip()
@@ -39,4 +109,4 @@ class LoginView(tk.Frame):
         if usuario_valido:
             self.on_login_success()
         else:
-            messagebox.showerror("Error", "Identificación no registrada o clave incorrecta (use 1234).")
+            messagebox.showerror("Error", "Identificación o clave incorrecta...")

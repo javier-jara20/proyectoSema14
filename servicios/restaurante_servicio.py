@@ -51,7 +51,8 @@ class RestauranteServicio:
                     registro.get("identificacion", "")
                 ).strip(),
                 nombre=str(registro.get("nombre", "")).strip(),
-                correo=str(registro.get("correo", "")).strip()
+                correo=str(registro.get("correo", "")).strip(),
+                contrasena=str(registro.get("contraseña", "")).strip()
             )
 
             self.usuarios.append(usuario)
@@ -65,15 +66,18 @@ class RestauranteServicio:
         identificacion: str,
         clave: str
     ) -> Usuario | None:
-
-        if clave != "1234":
-            return None
+        """Valida si un usuario existe y si la contraseña es correcta."""
 
         for usuario in self.usuarios:
-            if usuario.identificacion == identificacion:
+            if (
+                usuario.identificacion == identificacion.strip()
+                and usuario.contrasena == clave.strip()
+            ):
                 return usuario
 
         return None
+
+        
 
     # -------------------------------------------------
     # CONSULTAS

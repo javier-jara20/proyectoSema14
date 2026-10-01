@@ -1,12 +1,5 @@
 [
     {
-        "codigo": "p001",
-        "nombre": "hamburguesa",
-        "categoria": "comida",
-        "precio": 5.0,
-        "stock": 5
-    },
-    {
         "codigo": "p002",
         "nombre": "Leche entera la vaquita",
         "categoria": "lacteos",
@@ -63,10 +56,10 @@
         "stock": 29
     },
     {
-        "codigo": "yoghurt natura",
-        "nombre": "yoghurt natural",
+        "codigo": "p001",
+        "nombre": "queso",
         "categoria": "lacteos",
-        "precio": 5.0,
-        "stock": 23
+        "precio": 4.75,
+        "stock": 10
     }
 ]

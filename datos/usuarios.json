@@ -2,41 +2,49 @@
     {
         "identificacion": "1105278700",
         "nombre": "javier Jaramillo",
-        "correo": "javier@gmail.com"
+        "correo": "javier@gmail.com",
+        "contraseña": "javier123"
     },
     {
         "identificacion": "1105278701",
         "nombre": "jose hurtado",
-        "correo": "jose12@gmail.com"
+        "correo": "jose12@gmail.com",
+        "contraseña": "jose123"
     },
     {
         "identificacion": "1105278702",
         "nombre": "maria rojas",
-        "correo": "maria23ro@gmail.com"
+        "correo": "maria23ro@gmail.com",
+        "contraseña": "maria123"
     },
     {
         "identificacion": "1105278703",
         "nombre": "fernado jimenez",
-        "correo": "fernajim@gmai.com"
+        "correo": "fernajim@gmai.com",
+        "contraseña": "fernando123"
     },
     {
         "identificacion": "1105278704",
         "nombre": "luciana tobar",
-        "correo": "lucy4to@gmail.com"
+        "correo": "lucy4to@gmail.com",
+        "contraseña": "luciana123"
     },
     {
         "identificacion": "1105278705",
         "nombre": "vanessa perez",
-        "correo": "vaneper34@gmail.com"
+        "correo": "vaneper34@gmail.com",
+        "contraseña": "vanessa123"
     },
     {
         "identificacion": "1105278706",
         "nombre": "selena Gomez",
-        "correo": "selegomz@gmail.com"
+        "correo": "selegomz@gmail.com",
+        "contraseña": "selena123"
     },
     {
         "identificacion": "1105278708",
         "nombre": "miguel alvarez",
-        "correo": "miguealv@gmail.com"
+        "correo": "miguealv@gmail.com",
+        "contraseña": "miguel123"
     }
 ]
