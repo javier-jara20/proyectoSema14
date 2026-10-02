@@ -1,24 +1,29 @@
 import json
-from typing import Any
+from pathlib import Path
 
 
 class ArchivoServicio:
-    """Gestiona la lectura y escritura de archivos JSON."""
 
-    def cargar_json(self, ruta: str) -> list[dict[str, Any]]:
-        """Carga una lista de registros desde un archivo JSON."""
+    def __init__(self) -> None:
+        self.base_dir = Path(__file__).resolve().parent.parent
 
-        with open(ruta, "r", encoding="utf-8") as archivo:
-            datos = json.load(archivo)
+    def cargar_json(self, ruta: str):
+        ruta_completa = self.base_dir / ruta
 
-        return datos
+        with open(ruta_completa, "r", encoding="utf-8") as archivo:
+            return json.load(archivo)
 
-    def guardar_json(
-        self,
-        ruta: str,
-        datos: list[dict[str, Any]]
-    ) -> None:
-        """Guarda una lista de registros en un archivo JSON."""
+    def guardar_json(self, ruta: str, datos) -> None:
+        ruta_completa = self.base_dir / ruta
 
-        with open(ruta, "w", encoding="utf-8") as archivo:
-            json.dump(datos, archivo, ensure_ascii=False, indent=4)
+        with open(
+            ruta_completa,
+            "w",
+            encoding="utf-8"
+        ) as archivo:
+            json.dump(
+                datos,
+                archivo,
+                ensure_ascii=False,
+                indent=4
+            )
